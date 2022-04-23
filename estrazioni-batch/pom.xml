@@ -35,7 +35,7 @@
 	</properties>
 
 	<dependencies>
-		
+
 		<dependency>
 			<groupId>org.apache.logging.log4j</groupId>
 			<artifactId>log4j-core</artifactId>
@@ -51,13 +51,13 @@
 			<groupId>org.junit.jupiter</groupId>
 			<artifactId>junit-jupiter-api</artifactId>
 			<version>5.8.2</version>
-			
+
 		</dependency>
-<!-- 		<dependency> -->
-<!-- 			<groupId>junit</groupId>     NOT org.junit here -->
-<!-- 			<artifactId>junit-dep</artifactId> -->
-<!-- 			<version>4.8.2</version> -->
-<!-- 		</dependency> -->
+		<!-- <dependency> -->
+		<!-- <groupId>junit</groupId> NOT org.junit here -->
+		<!-- <artifactId>junit-dep</artifactId> -->
+		<!-- <version>4.8.2</version> -->
+		<!-- </dependency> -->
 		<!-- https://mvnrepository.com/artifact/com.ibm.db2/jcc -->
 		<dependency>
 			<groupId>com.ibm.db2</groupId>
@@ -84,11 +84,11 @@
 			<version>4.4.0</version>
 		</dependency>
 		<!-- https://mvnrepository.com/artifact/org.junit.vintage/junit-vintage-engine -->
-<!-- 		<dependency> -->
-<!-- 			<groupId>org.junit.vintage</groupId> -->
-<!-- 			<artifactId>junit-vintage-engine</artifactId> -->
-<!-- 			<version>5.8.2</version> -->
-<!-- 		</dependency> -->
+		<!-- <dependency> -->
+		<!-- <groupId>org.junit.vintage</groupId> -->
+		<!-- <artifactId>junit-vintage-engine</artifactId> -->
+		<!-- <version>5.8.2</version> -->
+		<!-- </dependency> -->
 		<!-- https://mvnrepository.com/artifact/org.springframework/spring-core -->
 		<dependency>
 			<groupId>org.springframework</groupId>
@@ -153,9 +153,9 @@
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
 
-    <version>3.10.1</version>
+				<version>3.10.1</version>
 
-				
+
 				<configuration>
 					<source>1.8</source>
 					<target>1.8</target>
@@ -166,8 +166,8 @@
 				</configuration>
 
 			</plugin>
-			
-					<plugin>
+
+			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-surefire-plugin</artifactId>
 				<version>3.0.0-M6</version>
@@ -176,15 +176,17 @@
 					<skip>false</skip> <!-- Please take care of these parameters. They will help you to spot failure 
 						in test assertions -->
 					<skipTests>false</skipTests>
-                <testSourceDirectory>${basedir}/src/main/test/</testSourceDirectory>
-                
-                <properties>
-<property><name>surefire.testng.verbose</name><value>10</value>
-</property>
-</properties>
-<includes>
-                    <include>**/*Test.java</include>
-                </includes>
+					<testSourceDirectory>${basedir}/src/main/test/</testSourceDirectory>
+
+					<properties>
+						<property>
+							<name>surefire.testng.verbose</name>
+							<value>10</value>
+						</property>
+					</properties>
+					<includes>
+						<include>**/*Test.java</include>
+					</includes>
 				</configuration>
 				<dependencies>
 					<dependency>
@@ -196,7 +198,7 @@
 						<groupId>org.junit.jupiter</groupId>
 						<artifactId>junit-jupiter-engine</artifactId>
 						<version>5.8.2</version>
-						
+
 					</dependency>
 					<!-- https://mvnrepository.com/artifact/org.apache.maven.surefire/surefire-api -->
 					<dependency>
@@ -262,75 +264,10 @@
 					</execution>
 				</executions>
 			</plugin>
-			<!-- <plugin> -->
-			<!-- <groupId>org.apache.maven.plugins</groupId> -->
-			<!-- <artifactId>maven-surefire-plugin</artifactId> -->
-			<!-- <version>2.19.1</version> -->
-			<!-- <configuration> -->
-			<!-- <testFailureIgnore>false</testFailureIgnore> -->
-			<!-- <skip>true</skip> Please take care of these parameters. They will 
-				help you to spot failure -->
-			<!-- in test assertions -->
-			<!-- <skipTests>false</skipTests> -->
-			<!-- </configuration> -->
-			<!-- </plugin> -->
-			<!-- <plugin> -->
-			<!-- <artifactId>maven-resources-plugin</artifactId> -->
-			<!-- <version>3.1.0</version> -->
-			<!-- <executions> -->
-			<!-- <execution> -->
-			<!-- <id>copy-resources</id> -->
-			<!-- <phase>install</phase> -->
-			<!-- <goals> -->
-			<!-- <goal>copy-resources</goal> -->
-			<!-- </goals> -->
-			<!-- <configuration> -->
-			<!-- <outputDirectory>${basedir}/target/diraliases/BATCHROOT/ITT/bin/Batch/</outputDirectory> -->
-			<!-- <resources> -->
-			<!-- <resource> -->
-			<!-- <directory>it/isp/</directory> -->
-			<!-- <includes> -->
-			<!-- <include>**/*.*</include> -->
-			<!-- </includes> -->
-			<!-- </resource> -->
-			<!-- </resources> -->
-			<!-- </configuration> -->
-			<!-- </execution> -->
-			<!-- </executions> -->
-			<!-- </plugin> -->
-
-			<!-- <execution> -->
-			<!-- <id>script-files</id> -->
-			<!-- <phase>validate</phase> -->
-			<!-- <goals> -->
-			<!-- <goal>copy-resources</goal> -->
-			<!-- </goals> -->
-			<!-- <configuration> -->
-			<!-- <outputDirectory>${basedir}/target/diraliases/BATCHROOT/batch/config</outputDirectory> -->
-			<!-- <resources> -->
-			<!-- <resource> -->
-			<!-- <directory>config</directory> -->
-			<!-- <filtering>true</filtering> -->
-			<!-- </resource> -->
-			<!-- </resources> -->
-			<!-- </configuration> -->
-			<!-- </execution> -->
-			<!-- </executions> -->
-			<!-- </plugin> -->
 
 
 
 
-			<!-- Maven plugin to use perticular java version to compile code -->
-
-			<!-- <plugin> -->
-			<!-- <groupId>org.apache.maven.plugins</groupId> -->
-			<!-- <artifactId>maven-jar-plugin</artifactId> -->
-			<!-- <version>2.3.1</version> -->
-			<!-- <configuration> -->
-			<!-- <outputDirectory>${basedir}/target/diraliases/BATCHROOT/batch/lib</outputDirectory> -->
-			<!-- </configuration> -->
-			<!-- </plugin> -->
 
 
 		</plugins>
