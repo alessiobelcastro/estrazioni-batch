@@ -4,20 +4,6 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
-	<!-- <repositories> -->
-	<!-- <repository> -->
-	<!-- <id>central-maven</id> -->
-	<!-- <name>central https Releases</name> -->
-	<!-- <url>https://repo.maven.apache.org/maven2</url> -->
-	<!-- </repository> -->
-	<!-- <repository> -->
-	<!-- <id>central-spring</id> -->
-	<!-- <name>central spring https Releases</name> -->
-	<!-- <url>https://repo.spring.io</url> -->
-	<!-- </repository> -->
-	<!-- </repositories> -->
-
-
 	<groupId>it.isp.batch</groupId>
 	<artifactId>Estrazioni-Batch</artifactId>
 	<version>1.0.0-SNAPSHOT</version>
@@ -53,27 +39,10 @@
 			<version>5.8.2</version>
 
 		</dependency>
-		<!-- <dependency> -->
-		<!-- <groupId>junit</groupId> NOT org.junit here -->
-		<!-- <artifactId>junit-dep</artifactId> -->
-		<!-- <version>4.8.2</version> -->
-		<!-- </dependency> -->
-		<!-- https://mvnrepository.com/artifact/com.ibm.db2/jcc -->
-		<dependency>
-			<groupId>com.ibm.db2</groupId>
-			<artifactId>jcc</artifactId>
-			<version>11.1.4.4</version>
-		</dependency>
 		<dependency>
 			<groupId>org.junit.platform</groupId>
 			<artifactId>junit-platform-runner</artifactId>
 			<version>1.8.2</version>
-		</dependency>
-		<dependency>
-			<groupId>org.projectlombok</groupId>
-			<artifactId>lombok</artifactId>
-			<version>1.18.22</version>
-			<scope>provided</scope>
 		</dependency>
 
 
@@ -83,13 +52,6 @@
 			<artifactId>mockito-junit-jupiter</artifactId>
 			<version>4.4.0</version>
 		</dependency>
-		<!-- https://mvnrepository.com/artifact/org.junit.vintage/junit-vintage-engine -->
-		<!-- <dependency> -->
-		<!-- <groupId>org.junit.vintage</groupId> -->
-		<!-- <artifactId>junit-vintage-engine</artifactId> -->
-		<!-- <version>5.8.2</version> -->
-		<!-- </dependency> -->
-		<!-- https://mvnrepository.com/artifact/org.springframework/spring-core -->
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-core</artifactId>

@@ -114,7 +114,7 @@ public class Utility {
 		PreparedStatement ps = null;
 		ResultSet rs = null;
 		try {
-			query="select VALORE from t_chci_configurazioni_05 where chiave =? ";
+			query="select VALORE from t_prova where chiave =? ";
 			ps= conn.prepareStatement(query);
 			ps.setString(1, chiave);
 			rs = ps.executeQuery();
@@ -136,7 +136,7 @@ public class Utility {
 		PreparedStatement ps = null;
 		ResultSet rs = null;
 		try {
-			query="select * from t_chci_label where chiave = ? ";
+			query="select * from t_pp where chiave = ? ";
 			ps= conn.prepareStatement(query);
 			ps.setString(1, chiave);
 			rs = ps.executeQuery();
@@ -202,9 +202,7 @@ public class Utility {
 		String returnValue = "";
 		String wantedProperty =  System.getProperty(property);
 	    returnValue = wantedProperty;
-	    System.out.println("Variabile d'ambiente: "+property+".Valore>>> "+wantedProperty);
-	    if(wantedProperty == null)
-	    	 System.out.println("readProperty: Property " + property + " NON TROVATA");
+
 		return returnValue;
 	}
 	
@@ -224,31 +222,5 @@ public class Utility {
 		} catch (Exception e) {	//System.out.println("Errore durante la chiusura dei ps");
 		}
 	}
-	
-	public static void setVariabiliLocali() throws Exception{
-		HashMap<String,String> varLette = new HashMap<String,String>();
-		String nomeFile = "./config/varAmbienteLocali.properties";
-		Properties propertiesLoc = new Properties();
-		InputStream streamFilePr = null;
 
-		streamFilePr = new FileInputStream (nomeFile);
-		propertiesLoc.load (streamFilePr);
-		for(String key : propertiesLoc.stringPropertyNames()) varLette.put(key, propertiesLoc.getProperty(key));
-		if (streamFilePr!=null) try {streamFilePr.close();} catch (Exception e) {e.printStackTrace();}
-
-		System.setProperty("OracleJDBCURL", varLette.get("OracleJDBCURL"));
-		System.setProperty("OracleOwner", varLette.get("OracleOwner"));
-		System.setProperty("OraclePassword", varLette.get("OraclePassword"));
-		System.setProperty("Db2JDBCURL", varLette.get("Db2JDBCURL"));
-		System.setProperty("Db2Owner", varLette.get("Db2Owner"));
-		System.setProperty("Db2Password", varLette.get("Db2Password"));
-		System.setProperty("OutputPath", varLette.get("OutputPath"));
-		System.setProperty("DD_CHMS0_SMTPHOST"      , varLette.get("DD_CHMS0_SMTPHOST"      ));
-		System.setProperty("DD_CHMS0_SMPTPUSERNAME" , varLette.get("DD_CHMS0_SMPTPUSERNAME" ));
-		System.setProperty("DD_CHMS0_SMTPPASSWORD"  , varLette.get("DD_CHMS0_SMTPPASSWORD"  ));
-		System.setProperty("DD_CHMS0_SMTPFROM"      , varLette.get("DD_CHMS0_SMTPFROM"      ));
-		System.setProperty("DD_CHMS0_SMTPPORT"      , varLette.get("DD_CHMS0_SMTPPORT"      ));
-		System.setProperty("DD_CHMS0_DEBUGMAIL"     , varLette.get("DD_CHMS0_DEBUGMAIL"     ));
-
-	}
 }

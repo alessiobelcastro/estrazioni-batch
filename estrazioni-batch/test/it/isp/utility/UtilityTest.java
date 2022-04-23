@@ -133,45 +133,6 @@ public class UtilityTest {
 	}
 	
 	
-//	@Test
-//	public void getLabel_01()  {
-//		
-//		String chiave="chiave";
-//		String value="value  ";
-//		
-//		
-//		RecordControlloDb2 recordDb2 = getReconrdControlloDb2();
-//		String st1 = "test";
-//		when(con.prepareStatement(any())).thenReturn(stmt);
-//		when(stmt.executeQuery()).thenReturn(rs);
-//		when(rs.next()).thenReturn(true);
-//		
-//		test();
-//		
-//		assertEquals(value.trim(),Utility.getValoreFromConfigurazioni05(connection,chiave));
-		//test.isAssenteSuUdcDecodif(recordDb2, con);
-//		
-//		
-//		
-//		
-//		PreparedStatement ps= mock(PreparedStatement.class);
-//		when(connection.prepareStatement("select VALORE from t_chci_configurazioni_05 where chiave =? ")).thenReturn(ps);
-//		when(ps.executeQuery()).thenReturn(rs);
-//		when(rs.next()).thenReturn(true).thenReturn(false);
-//		when(rs.getString("VALORE")).thenReturn(value);
-//		
-//		assertEquals(value.trim(),Utility.getValoreFromConfigurazioni05(connection,chiave));
-//		
-//		verify(ps).setString(1, chiave);	
-//		
-//		
-//		try {
-//			String stTest =	Utility.getLabel(con, "chiave, isEng)
-//		}catch (Exception e) {
-//			assertEquals(e.getClass(),NullPointerException.class);
-//		}
-//	}
-	
 	
 	@Test
 	public void getParametriPerOutputTest()  {
@@ -247,7 +208,7 @@ public class UtilityTest {
 			String chiave="chiave";
 			String value="value  ";
 			PreparedStatement ps= mock(PreparedStatement.class);
-			when(connection.prepareStatement("select VALORE from t_chci_configurazioni_05 where chiave =? ")).thenReturn(ps);
+			when(connection.prepareStatement("select VALORE from t_prova where chiave =? ")).thenReturn(ps);
 			when(ps.executeQuery()).thenReturn(rs);
 			when(rs.next()).thenReturn(true).thenReturn(false);
 			when(rs.getString("VALORE")).thenReturn(value);
