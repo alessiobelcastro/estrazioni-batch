@@ -1,4 +1,4 @@
-package main.it.isp.utility;
+package main.java.it.utility;
 
 import java.io.FileInputStream;
 import java.io.InputStream;

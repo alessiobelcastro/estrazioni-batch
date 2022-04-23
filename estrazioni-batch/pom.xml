@@ -97,17 +97,7 @@
 
 	<build>
 		<finalName>Estrazioni-Batch</finalName>
-		<sourceDirectory>src</sourceDirectory>
-		<testSourceDirectory>test</testSourceDirectory>
 
-		<resources>
-			<resource>
-				<directory>src/</directory>
-				<excludes>
-					<exclude>test/</exclude>
-				</excludes>
-			</resource>
-		</resources>
 
 		<plugins>
 
@@ -122,9 +112,9 @@
 					<source>1.8</source>
 					<target>1.8</target>
 					<outputDirectory>${basedir}/target/diraliases/BATCHROOT/Estrazioni-batch/classes</outputDirectory>
-					<testExcludes>
-						<testExclude>**/*Test*</testExclude>
-					</testExcludes>
+				<testExcludes>
+                    <testExclude>**/*Test*</testExclude>
+                </testExcludes>
 				</configuration>
 
 			</plugin>
@@ -138,7 +128,7 @@
 					<skip>false</skip> <!-- Please take care of these parameters. They will help you to spot failure 
 						in test assertions -->
 					<skipTests>false</skipTests>
-					<testSourceDirectory>${basedir}/src/main/test/</testSourceDirectory>
+					<testSourceDirectory>${basedir}/src/test/</testSourceDirectory>
 
 					<properties>
 						<property>

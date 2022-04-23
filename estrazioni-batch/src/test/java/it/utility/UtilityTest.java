@@ -1,4 +1,4 @@
-package it.isp.utility;
+package test.java.it.utility;
 
 
 
@@ -10,7 +10,7 @@ import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 import org.mockito.junit.jupiter.MockitoExtension;
 
-import main.it.isp.utility.Utility;
+import main.java.it.utility.Utility;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
