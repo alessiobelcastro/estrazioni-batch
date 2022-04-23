@@ -16,11 +16,7 @@
 	<!-- <url>https://repo.spring.io</url> -->
 	<!-- </repository> -->
 	<!-- </repositories> -->
-	<parent>
-		<groupId>com.intesasanpaolo.alm</groupId>
-		<artifactId>parent-pom</artifactId>
-		<version>20</version>
-	</parent>
+
 
 	<groupId>it.isp.batch</groupId>
 	<artifactId>Estrazioni-Batch</artifactId>
