@@ -1,0 +1,350 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<!-- <repositories> -->
+	<!-- <repository> -->
+	<!-- <id>central-maven</id> -->
+	<!-- <name>central https Releases</name> -->
+	<!-- <url>https://repo.maven.apache.org/maven2</url> -->
+	<!-- </repository> -->
+	<!-- <repository> -->
+	<!-- <id>central-spring</id> -->
+	<!-- <name>central spring https Releases</name> -->
+	<!-- <url>https://repo.spring.io</url> -->
+	<!-- </repository> -->
+	<!-- </repositories> -->
+	<parent>
+		<groupId>com.intesasanpaolo.alm</groupId>
+		<artifactId>parent-pom</artifactId>
+		<version>20</version>
+	</parent>
+
+	<groupId>it.isp.batch</groupId>
+	<artifactId>Estrazioni-Batch</artifactId>
+	<version>1.0.0-SNAPSHOT</version>
+
+	<properties>
+		<!-- Dependency versions -->
+		<junit.jupiter.version>5.5.2</junit.jupiter.version>
+		<!-- Java 8 -->
+		<maven.compiler.target>1.8</maven.compiler.target>
+		<maven.compiler.source>1.8</maven.compiler.source>
+		<java.version>1.8</java.version>
+		<!-- Encoding -->
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+	</properties>
+
+	<dependencies>
+		<dependency>
+			<groupId>com.oracle.jdbc</groupId>
+			<artifactId>ojdbc8</artifactId>
+			<version>12.2.0.1</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.logging.log4j</groupId>
+			<artifactId>log4j-core</artifactId>
+			<version>2.17.2</version>
+		</dependency>
+		<dependency>
+			<groupId>org.junit</groupId>
+			<artifactId>junit5-engine</artifactId>
+			<version>5.0.0-ALPHA</version>
+		</dependency>
+		<!-- Jupiter API for writing tests -->
+		<dependency>
+			<groupId>org.junit.jupiter</groupId>
+			<artifactId>junit-jupiter-api</artifactId>
+			<version>5.8.2</version>
+			
+		</dependency>
+<!-- 		<dependency> -->
+<!-- 			<groupId>junit</groupId>     NOT org.junit here -->
+<!-- 			<artifactId>junit-dep</artifactId> -->
+<!-- 			<version>4.8.2</version> -->
+<!-- 		</dependency> -->
+		<!-- https://mvnrepository.com/artifact/com.ibm.db2/jcc -->
+		<dependency>
+			<groupId>com.ibm.db2</groupId>
+			<artifactId>jcc</artifactId>
+			<version>11.1.4.4</version>
+		</dependency>
+		<dependency>
+			<groupId>org.junit.platform</groupId>
+			<artifactId>junit-platform-runner</artifactId>
+			<version>1.8.2</version>
+		</dependency>
+		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+			<version>1.18.22</version>
+			<scope>provided</scope>
+		</dependency>
+
+
+		<!-- https://mvnrepository.com/artifact/org.mockito/mockito-junit-jupiter -->
+		<dependency>
+			<groupId>org.mockito</groupId>
+			<artifactId>mockito-junit-jupiter</artifactId>
+			<version>4.4.0</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.junit.vintage/junit-vintage-engine -->
+<!-- 		<dependency> -->
+<!-- 			<groupId>org.junit.vintage</groupId> -->
+<!-- 			<artifactId>junit-vintage-engine</artifactId> -->
+<!-- 			<version>5.8.2</version> -->
+<!-- 		</dependency> -->
+		<!-- https://mvnrepository.com/artifact/org.springframework/spring-core -->
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-core</artifactId>
+			<version>5.3.18</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.springframework/spring-tx -->
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-tx</artifactId>
+			<version>5.3.18</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.mockito/mockito-core -->
+		<dependency>
+			<groupId>org.mockito</groupId>
+			<artifactId>mockito-core</artifactId>
+			<version>4.4.0</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-jdbc</artifactId>
+			<version>3.2.1.RELEASE</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.apache.commons/commons-dbcp2 -->
+		<dependency>
+			<groupId>org.apache.commons</groupId>
+			<artifactId>commons-dbcp2</artifactId>
+			<version>2.9.0</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.apache.commons/commons-lang3 -->
+		<dependency>
+			<groupId>org.apache.commons</groupId>
+			<artifactId>commons-lang3</artifactId>
+			<version>3.12.0</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/commons-lang/commons-lang -->
+		<dependency>
+			<groupId>commons-lang</groupId>
+			<artifactId>commons-lang</artifactId>
+			<version>2.6</version>
+		</dependency>
+
+	</dependencies>
+
+	<build>
+		<finalName>Estrazioni-Batch</finalName>
+		<sourceDirectory>src</sourceDirectory>
+		<testSourceDirectory>src/main/test</testSourceDirectory>
+
+		<resources>
+			<resource>
+				<directory>src/</directory>
+				<excludes>
+					<exclude>src/main/test/</exclude>
+				</excludes>
+			</resource>
+		</resources>
+
+		<plugins>
+
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+
+    <version>3.10.1</version>
+
+				
+				<configuration>
+					<source>1.8</source>
+					<target>1.8</target>
+					<outputDirectory>${basedir}/target/diraliases/BATCHROOT/Estrazioni-batch/classes</outputDirectory>
+					<testExcludes>
+						<testExclude>**/*Test*</testExclude>
+					</testExcludes>
+				</configuration>
+
+			</plugin>
+			
+					<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-surefire-plugin</artifactId>
+				<version>3.0.0-M6</version>
+				<configuration>
+					<testFailureIgnore>false</testFailureIgnore>
+					<skip>false</skip> <!-- Please take care of these parameters. They will help you to spot failure 
+						in test assertions -->
+					<skipTests>false</skipTests>
+                <testSourceDirectory>${basedir}/src/main/test/</testSourceDirectory>
+                
+                <properties>
+<property><name>surefire.testng.verbose</name><value>10</value>
+</property>
+</properties>
+<includes>
+                    <include>**/*Test.java</include>
+                </includes>
+				</configuration>
+				<dependencies>
+					<dependency>
+						<groupId>org.junit.platform</groupId>
+						<artifactId>junit-platform-surefire-provider</artifactId>
+						<version>1.2.0-M1</version>
+					</dependency>
+					<dependency>
+						<groupId>org.junit.jupiter</groupId>
+						<artifactId>junit-jupiter-engine</artifactId>
+						<version>5.8.2</version>
+						
+					</dependency>
+					<!-- https://mvnrepository.com/artifact/org.apache.maven.surefire/surefire-api -->
+					<dependency>
+						<groupId>org.apache.maven.surefire</groupId>
+						<artifactId>surefire-api</artifactId>
+						<version>3.0.0-M6</version>
+					</dependency>
+				</dependencies>
+			</plugin>
+			<plugin>
+				<groupId>org.jacoco</groupId>
+				<artifactId>jacoco-maven-plugin</artifactId>
+				<version>0.8.7</version>
+				<!-- Suggested to always use the latest, at minimun 0.8.3 -->
+				<executions>
+					<execution>
+						<id>prepare-agent</id>
+						<goals>
+							<goal>prepare-agent</goal>
+						</goals>
+						<configuration>
+							<!-- EXEC format is still used as an intermediate report format, but 
+								it purpose is only internal to JaCoCo execution -->
+							<!-- It will not be parsed by Sonar. There will be one EXEC file for 
+								each module of the application -->
+							<destFile>./jacoco-${project.artifactId}.exec</destFile>
+						</configuration>
+					</execution>
+					<execution>
+						<id>report</id>
+						<goals>
+							<goal>report</goal>
+						</goals>
+						<configuration>
+							<!-- The purpose of REPORT goal is to convert each EXEC in evry output 
+								format that JaCoCo is able to produce, including XML -->
+							<!-- The XML files are placed inside a temporary directory -->
+							<dataFile>./jacoco-${project.artifactId}.exec</dataFile>
+							<outputDirectory>./sonar-report/temp-jacoco-xml/${project.artifactId}</outputDirectory>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+			<plugin>
+				<groupId>com.coderplus.maven.plugins</groupId>
+				<artifactId>copy-rename-maven-plugin</artifactId>
+				<version>1.0</version>
+				<executions>
+					<execution>
+						<id>copy-file</id>
+						<phase>verify</phase>
+						<goals>
+							<goal>copy</goal>
+						</goals>
+						<configuration>
+							<!-- The purpose of this plugin is to collect all the XML files under 
+								the temp directory in each module -->
+							<!-- and copy in to the right path scanned by Sonar. There will be 
+								one XML file for each module -->
+							<sourceFile>./sonar-report/temp-jacoco-xml/${project.artifactId}/jacoco.xml</sourceFile>
+							<destinationFile>./sonar-report/jacoco-xml/jacoco-${project.artifactId}.xml</destinationFile>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+			<!-- <plugin> -->
+			<!-- <groupId>org.apache.maven.plugins</groupId> -->
+			<!-- <artifactId>maven-surefire-plugin</artifactId> -->
+			<!-- <version>2.19.1</version> -->
+			<!-- <configuration> -->
+			<!-- <testFailureIgnore>false</testFailureIgnore> -->
+			<!-- <skip>true</skip> Please take care of these parameters. They will 
+				help you to spot failure -->
+			<!-- in test assertions -->
+			<!-- <skipTests>false</skipTests> -->
+			<!-- </configuration> -->
+			<!-- </plugin> -->
+			<!-- <plugin> -->
+			<!-- <artifactId>maven-resources-plugin</artifactId> -->
+			<!-- <version>3.1.0</version> -->
+			<!-- <executions> -->
+			<!-- <execution> -->
+			<!-- <id>copy-resources</id> -->
+			<!-- <phase>install</phase> -->
+			<!-- <goals> -->
+			<!-- <goal>copy-resources</goal> -->
+			<!-- </goals> -->
+			<!-- <configuration> -->
+			<!-- <outputDirectory>${basedir}/target/diraliases/BATCHROOT/ITT/bin/Batch/</outputDirectory> -->
+			<!-- <resources> -->
+			<!-- <resource> -->
+			<!-- <directory>it/isp/</directory> -->
+			<!-- <includes> -->
+			<!-- <include>**/*.*</include> -->
+			<!-- </includes> -->
+			<!-- </resource> -->
+			<!-- </resources> -->
+			<!-- </configuration> -->
+			<!-- </execution> -->
+			<!-- </executions> -->
+			<!-- </plugin> -->
+
+			<!-- <execution> -->
+			<!-- <id>script-files</id> -->
+			<!-- <phase>validate</phase> -->
+			<!-- <goals> -->
+			<!-- <goal>copy-resources</goal> -->
+			<!-- </goals> -->
+			<!-- <configuration> -->
+			<!-- <outputDirectory>${basedir}/target/diraliases/BATCHROOT/batch/config</outputDirectory> -->
+			<!-- <resources> -->
+			<!-- <resource> -->
+			<!-- <directory>config</directory> -->
+			<!-- <filtering>true</filtering> -->
+			<!-- </resource> -->
+			<!-- </resources> -->
+			<!-- </configuration> -->
+			<!-- </execution> -->
+			<!-- </executions> -->
+			<!-- </plugin> -->
+
+
+
+
+			<!-- Maven plugin to use perticular java version to compile code -->
+
+			<!-- <plugin> -->
+			<!-- <groupId>org.apache.maven.plugins</groupId> -->
+			<!-- <artifactId>maven-jar-plugin</artifactId> -->
+			<!-- <version>2.3.1</version> -->
+			<!-- <configuration> -->
+			<!-- <outputDirectory>${basedir}/target/diraliases/BATCHROOT/batch/lib</outputDirectory> -->
+			<!-- </configuration> -->
+			<!-- </plugin> -->
+
+
+		</plugins>
+
+
+
+	</build>
+
+</project>

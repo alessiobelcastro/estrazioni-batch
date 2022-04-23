@@ -1,0 +1,31 @@
+---
+config:
+  node: "linux && prod"
+
+build:
+  automatic_tag: true
+  type: "maven" #available: maven, npm, mobile_android, mobile_ios, no_build, automatic_tag: true
+  jdk_version: "8"
+  mvn_version: "3.3.9"
+  skiptest: true
+  loglevel: "info" # available: info, debug, error
+  pre_action:
+    type: sh # available: bat, powershell, sh
+    command: "ls -la"
+  post_action:
+    type: sh # available: bat, powershell, sh
+    command: "ls -la"
+
+quality:
+  sonar:
+    active: false
+
+deployment:
+  mappingdestdistribution:
+    active: true
+    kind_deploy: mappingdestdistribution
+    distribution : delta
+
+notification:
+  email: "a.belcastro@almaviva.it" # available: indirizzo email
+  when: always

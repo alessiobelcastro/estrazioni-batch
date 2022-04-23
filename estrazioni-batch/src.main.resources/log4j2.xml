@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="DEBUG">
+    <Appenders>
+        <Console name="Console" target="SYSTEM_OUT">
+            <PatternLayout pattern="%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n" />
+        </Console>
+
+        <Routing name="Routing">
+            <Routes pattern="$${sys:myProperty}">
+            <Route>
+                <File name="File" fileName="logs/${sys:myProperty}-${date:yyyy-MM-dd'_'HH-mm-ss}.log" immediateFlush="true" append="false">
+                    <PatternLayout
+                        pattern="%d{yyy-MM-dd HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n" />
+                </File>
+            </Route>
+
+            </Routes>
+        </Routing>
+    </Appenders>
+
+    <Loggers>
+        <Root level="debug">
+            <AppenderRef ref="Console" level="debug" />
+            <AppenderRef ref="Routing" level="debug" />
+        </Root>
+    </Loggers>
+</Configuration>
