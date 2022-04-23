@@ -136,13 +136,13 @@
 	<build>
 		<finalName>Estrazioni-Batch</finalName>
 		<sourceDirectory>src</sourceDirectory>
-		<testSourceDirectory>src/main/test</testSourceDirectory>
+		<testSourceDirectory>test</testSourceDirectory>
 
 		<resources>
 			<resource>
 				<directory>src/</directory>
 				<excludes>
-					<exclude>src/main/test/</exclude>
+					<exclude>test/</exclude>
 				</excludes>
 			</resource>
 		</resources>
